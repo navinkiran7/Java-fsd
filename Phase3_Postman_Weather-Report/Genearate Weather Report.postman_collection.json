@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "96e25629-dcbc-4100-aeae-26dbaa6b54de",
+		"name": "Genearate Weather Report",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32338972",
+		"_collection_link": "https://crimson-comet-509853.postman.co/workspace/PostMan-weather-report~31b418e9-6dac-4d54-b6c6-eec98084853c/collection/32338972-96e25629-dcbc-4100-aeae-26dbaa6b54de?action=share&source=collection_link&creator=32338972"
+	},
+	"item": [
+		{
+			"name": "Read Operations",
+			"item": [
+				{
+					"name": "Get Weather report",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"pm.test(\"Verify the location\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql(\"London\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response should be a json with valid\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"     pm.expect(jsonData.id).to.eql(2643743);\r",
+									"\r",
+									"});\r",
+									"pm.test(\"Response should be a json and dynamic\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"     pm.expect(jsonData).to.have.property(\"id\");\r",
+									"      pm.expect(jsonData).to.have.property(\"name\");\r",
+									"      pm.expect(jsonData.sys).to.have.property(\"country\");\r",
+									"      pm.expect(jsonData.sys).to.have.property(\"sunrise\");\r",
+									"      pm.expect(jsonData.sys).to.have.property(\"sunset\");\r",
+									"      \r",
+									"      pm.expect(jsonData).to.have.property(\"visibility\");\r",
+									"      \r",
+									"\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response should be json and not null and not undefined properties\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"     pm.expect(jsonData.id).to.not.be.null;\r",
+									"      pm.expect(jsonData.id).to.not.be.undefined;\r",
+									"\r",
+									"      pm.expect(jsonData.name).to.not.be.null;\r",
+									"      pm.expect(jsonData.name).to.not.be.undefined;\r",
+									"\r",
+									"       pm.expect(jsonData.sys.country).to.not.be.null;\r",
+									"      pm.expect(jsonData.sys.country).to.not.be.undefined;\r",
+									"\r",
+									"      pm.expect(jsonData.sys.sunrise).to.not.be.null;\r",
+									"      pm.expect(jsonData.sys.sunrise).to.not.be.undefined;\r",
+									"\r",
+									"      pm.expect(jsonData.sys.sunset).to.not.be.null;\r",
+									"      pm.expect(jsonData.sys.sunset).to.not.be.undefined;\r",
+									"    \r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host-url}}/data/2.5/weather?q={{location}}&appid={{api-key}}\n",
+							"host": [
+								"{{Host-url}}"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "{{location}}"
+								},
+								{
+									"key": "appid",
+									"value": "{{api-key}}\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.globals.set(\"country\", \"India\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Validate Collections variable\", function () {",
+							"    var Country=pm.collectionVariables.get(\"country\");",
+							"    ",
+							"   ",
+							"    console.log(Country);",
+							"    ",
+							"});"
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Host-url",
+			"value": "https://samples.openweathermap.org",
+			"type": "string"
+		},
+		{
+			"key": "location",
+			"value": "london,uk",
+			"type": "string"
+		},
+		{
+			"key": "api-key",
+			"value": "b6907d289e10d714a6e88b30761fae22",
+			"type": "string"
+		}
+	]
+}

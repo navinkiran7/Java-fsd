@@ -1,0 +1,99 @@
+{
+	"id": "f651f4b2-eadc-4c77-a4db-d52e7c0c8060",
+	"name": "Genearate Weather Report",
+	"timestamp": "2024-01-17T12:52:56.199Z",
+	"collection_id": "32338972-96e25629-dcbc-4100-aeae-26dbaa6b54de",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 14,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-01-17T12:52:55.351Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "d8dddc04-b8fb-4c82-a91b-4ff0f23172d0",
+			"name": "Get Weather report",
+			"url": "https://samples.openweathermap.org/data/2.5/weather?q=london,uk&appid=b6907d289e10d714a6e88b30761fae22\n",
+			"time": 173,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Validate Collections variable": true,
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Verify the location": true,
+				"Response should be a json with valid": true,
+				"Response should be a json and dynamic": true,
+				"Response should be json and not null and not undefined properties": true
+			},
+			"testPassFailCounts": {
+				"Validate Collections variable": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Verify the location": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Response should be a json with valid": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Response should be a json and dynamic": {
+					"pass": 2,
+					"fail": 0
+				},
+				"Response should be json and not null and not undefined properties": {
+					"pass": 2,
+					"fail": 0
+				}
+			},
+			"times": [
+				171,
+				173
+			],
+			"allTests": [
+				{
+					"Validate Collections variable": true,
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Verify the location": true,
+					"Response should be a json with valid": true,
+					"Response should be a json and dynamic": true,
+					"Response should be json and not null and not undefined properties": true
+				},
+				{
+					"Validate Collections variable": true,
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Verify the location": true,
+					"Response should be a json with valid": true,
+					"Response should be a json and dynamic": true,
+					"Response should be json and not null and not undefined properties": true
+				}
+			]
+		}
+	],
+	"count": 2,
+	"totalTime": 344,
+	"collection": {
+		"requests": [
+			{
+				"id": "d8dddc04-b8fb-4c82-a91b-4ff0f23172d0",
+				"method": "GET"
+			}
+		]
+	}
+}
