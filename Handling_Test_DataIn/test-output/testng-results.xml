@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-01-22T18:25:01 IST" name="Default suite" finished-at="2024-01-22T18:25:04 IST" duration-ms="3515">
+    <groups>
+    </groups>
+    <test started-at="2024-01-22T18:25:01 IST" name="Default test" finished-at="2024-01-22T18:25:04 IST" duration-ms="3515">
+      <class name="com.simplilearn.restassuredtest.RegisterRequestTest">
+        <test-method signature="testresgistrationWithToken()[pri:0, instance:com.simplilearn.restassuredtest.RegisterRequestTest@15a34df2]" started-at="2024-01-22T18:25:01 IST" name="testresgistrationWithToken" description="Test Registration  with rest assured" finished-at="2024-01-22T18:25:04 IST" duration-ms="3470" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testresgistrationWithToken -->
+      </class> <!-- com.simplilearn.restassuredtest.RegisterRequestTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
